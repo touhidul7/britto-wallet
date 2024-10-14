@@ -44,18 +44,6 @@ const BottomNav = () => {
 
   console.log("Range Selector", fromDate, toDate )
 
-  /* Redux-------------------- */
-  //   const range = (e) => {
-
-  //     e.preventDefault();
-  //     dispatch(
-  //         range({
-  //             fromDate: fromDate,
-  //             toDate: toDate,
-  //         })
-  //     );
-
-  // };
 
   return (
     <>
