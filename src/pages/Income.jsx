@@ -6,10 +6,12 @@ import { CalendarDays } from "lucide-react";
 import DataTable from "./DataTable";
 
 const Income = () => {
+
     const [source, setSource] = useState("");
     const [amount, setAmount] = useState("");
     const [date, setDate] = useState("");
     const [note, setNote] = useState("");
+    
     const dispatch = useDispatch();
 
     // generate random number

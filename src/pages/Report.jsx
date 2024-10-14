@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import ReportTable from "./ReportTable";
 
 const Report = () => {
+  
   const incomeList = useSelector((state) => state.personalBanking.addIncome);
   const expenseList = useSelector((state) => state.personalBanking.addExpense);
   const [fromDate, setFromDate] = useState("");
