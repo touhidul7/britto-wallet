@@ -49,7 +49,7 @@ export const productSlice = createSlice({
         setDateRange: (state, action) => {
             state.range = action.payload;
             localStorage.setItem("dateRange", JSON.stringify(action.payload));
-            toast.success("Date range updated!");
+            // toast.success("Date range updated!");
         }
     },
 })
