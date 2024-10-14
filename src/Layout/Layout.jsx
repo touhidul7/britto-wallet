@@ -15,7 +15,7 @@ const Layout = () => {
     return (
         <div>
             <Summary range={dateRange} incomeList={incomeList} expenseList={expenseList} budgetList={budgetList} />
-            <SelectedDate range={dateRange} incomeList={incomeList} expenseList={expenseList} />
+            <SelectedDate incomeList={incomeList} expenseList={expenseList} />
         </div>
     );
 };

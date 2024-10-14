@@ -5,10 +5,8 @@ import SelectedCal from "./SelectedCal";
 import DataTable from "../pages/DataTable";
 import { useEffect, useState } from "react";
 
-export default function SelectedDate({ incomeList, expenseList, range }) {
-    console.log("From Date:", range.fromDate);
-    console.log("To Date  :", range.toDate);
-
+export default function SelectedDate({ incomeList, expenseList }) {
+    
     /* Table Data------------- */
     const tableincomeList = useSelector((state) => state.personalBanking.addIncome);
     const tableexpenseList = useSelector((state) => state.personalBanking.addExpense);

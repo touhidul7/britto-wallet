@@ -11,7 +11,6 @@ const CreatePin = () => {
     const [getInput, setGetInput] = useState();
     const userInfoPin = useSelector((state) => state.personalBanking.userInfo?.pin);
     const userInfoSession = useSelector((state) => state.personalBanking.userInfo?.session);
-    console.log(userInfoSession);
     // dispatch
     const dispatch = useDispatch();
     // navigate

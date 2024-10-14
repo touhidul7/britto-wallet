@@ -12,7 +12,6 @@ const Expense = () => {
   const [amount, setAmount] = useState("");
   const [date, setDate] = useState("");
   const [note, setNote] = useState("");
-  console.log(source);
   const dispatch = useDispatch();
 
   // generate random number

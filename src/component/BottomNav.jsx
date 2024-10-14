@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Link } from "react-router-dom";
 import { useRef, useState } from "react";
 import AddModal from "./AddModal";
@@ -15,7 +16,6 @@ const BottomNav = () => {
   
 
   const dateRange = useSelector((state) => state.personalBanking.range);
-  console.log(dateRange.fromDate)
 
 
   const [fromDate, setFromDate] = useState(
@@ -41,7 +41,6 @@ const BottomNav = () => {
     setToDate(to);
     dispatch(setDateRange({ fromDate: from, toDate: to, range: srange }));
   };
-  console.log("Range Selector", fromDate, toDate )
   return (
     <>
       <AddModal
