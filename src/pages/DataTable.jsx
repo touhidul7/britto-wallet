@@ -123,24 +123,33 @@ const DataTable = ({ tabledata, type }) => {
           )}
         </table>
 
-        {/* Pagination------------ */}
-        <div className="dark:text-white flex justify-center items-center gap-4 p-2 mt-2">
-          <button
-            onClick={handlePrevPage}
-            disabled={currentPage === 1}
-            className={`${currentPage === 1 ? "dark:text-gray-600" : ""}`}
-          >
-            <ChevronLeft />
-          </button>
-          <span>{`${currentPage} of ${totalPages}`}</span>
-          <button
-            onClick={handleNextPage}
-            disabled={currentPage === totalPages}
-            className={`${currentPage === totalPages  ? "dark:text-gray-600" : ""}`}
-          >
-            <ChevronRight />
-          </button>
-        </div>
+        {currentItems.length > 0 ? (
+          <>
+            {/* Pagination------------ */}
+            <div className="dark:text-white flex justify-center items-center gap-4 p-2 mt-2">
+              <button
+                onClick={handlePrevPage}
+                disabled={currentPage === 1}
+                className={`${currentPage === 1 ? "dark:text-gray-600" : ""}`}
+              >
+                <ChevronLeft />
+              </button>
+              <span>{`${currentPage} of ${totalPages}`}</span>
+              <button
+                onClick={handleNextPage}
+                disabled={currentPage === totalPages}
+                className={`${
+                  currentPage === totalPages ? "dark:text-gray-600" : ""
+                }`}
+              >
+                <ChevronRight />
+              </button>
+            </div>
+          </>
+        ) : (
+          ""
+        )}
+        <></>
       </div>
     </div>
   );

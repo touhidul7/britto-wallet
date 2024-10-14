@@ -5,8 +5,6 @@ import * as XLSX from "xlsx";
 /* eslint-disable react/prop-types */
 
 const ReportTable = ({ tabledata, type }) => {
-
-
   /* Pagination------------------------->>> */
   const itemsPerPage = 5;
   const [currentPage, setCurrentPage] = useState(1);
@@ -125,34 +123,41 @@ const ReportTable = ({ tabledata, type }) => {
         </table>
 
         {/* Pagination------------ */}
-        <div className="dark:text-white flex justify-center items-center gap-4 p-2 mt-2">
-          <button
-            onClick={handlePrevPage}
-            disabled={currentPage === 1}
-            className={`${currentPage == 1 ? "dark:text-gray-600":""}`}
-          >
-            <ChevronLeft />
-          </button>
-          <span>{`${currentPage} of ${totalPages}`}</span>
-          <button
-            onClick={handleNextPage}
-            disabled={currentPage === totalPages}
-            className={`${currentPage == totalPages ? "dark:text-gray-600":""}`}
-          >
-            <ChevronRight />
-          </button>
-        </div>
-
-        <div className="dark:text-white flex justify-end p-2 gap-1 mt-1">
-          {/* Generate Report Sheet----------- */}
-          <button
-            onClick={generateExcel}
-            className="flex gap-1 border p-1 rounded dark:bg-gray-800"
-          >
-            <FileSpreadsheet />
-            Report
-          </button>
-        </div>
+        {currentItems.length > 0 ? (
+          <>
+            <div className="dark:text-white flex justify-center items-center gap-4 p-2 mt-2">
+              <button
+                onClick={handlePrevPage}
+                disabled={currentPage === 1}
+                className={`${currentPage == 1 ? "dark:text-gray-600" : ""}`}
+              >
+                <ChevronLeft />
+              </button>
+              <span>{`${currentPage} of ${totalPages}`}</span>
+              <button
+                onClick={handleNextPage}
+                disabled={currentPage === totalPages}
+                className={`${
+                  currentPage == totalPages ? "dark:text-gray-600" : ""
+                }`}
+              >
+                <ChevronRight />
+              </button>
+            </div>
+            <div className="dark:text-white flex justify-end p-2 gap-1 mt-1">
+              {/* Generate Report Sheet----------- */}
+              <button
+                onClick={generateExcel}
+                className="flex gap-1 border p-1 rounded dark:bg-gray-800"
+              >
+                <FileSpreadsheet />
+                Report
+              </button>
+            </div>
+          </>
+        ) : (
+          " "
+        )}
       </div>
     </div>
   );
