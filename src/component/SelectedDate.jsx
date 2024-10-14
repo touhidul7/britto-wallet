@@ -1,7 +1,9 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
 import { useSelector } from "react-redux";
 import SelectedCal from "./SelectedCal";
 import DataTable from "../pages/DataTable";
+import { useEffect, useState } from "react";
 
 export default function SelectedDate({ incomeList, expenseList, range }) {
     console.log("From Date:", range.fromDate);
@@ -22,21 +24,25 @@ export default function SelectedDate({ incomeList, expenseList, range }) {
     const totalExpense = expenseList.reduce((acc, expense) => acc + Number(expense.amount), 0);
 
 
-    /* Filter Data------------------------------>> */
-    const fromDate = new Date(range.fromDate);
-    const toDate = new Date(range.toDate);
+   /* ======================Filter====================== */
+  const [filteredList, setFilteredList] = useState([]);
+  const dateRange = useSelector((state) => state.personalBanking.range);
+  useEffect(() => {
+    const fromDate = new Date(dateRange.fromDate);
+    const toDate = new Date(dateRange.toDate);
 
-    const filteredList = mergedList.filter(item => {
-        const itemDate = new Date(item.date); 
-        return itemDate >= fromDate && itemDate <= toDate;
+    const newFilteredList = mergedList.filter((item) => {
+      const itemDate = new Date(item.date);
+      return itemDate >= fromDate && itemDate <= toDate;
     });
 
-    /* Filter Data End------------------------------>> */
+    setFilteredList(newFilteredList);/* .length > 0 ? newFilteredList : mergedList */
+  }, [dateRange, incomeList, expenseList]);
 
     return (
         <div className="flex flex-col gap-6">
             <SelectedCal income={totalIncome} expense={totalExpense} />
-            <DataTable tabledata={filteredList.length > 0 ? filteredList : mergedList} />
+            <DataTable tabledata={filteredList} />
         </div>
     );
 }
