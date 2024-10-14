@@ -41,10 +41,7 @@ const BottomNav = () => {
     setToDate(to);
     dispatch(setDateRange({ fromDate: from, toDate: to, range: srange }));
   };
-
   console.log("Range Selector", fromDate, toDate )
-
-
   return (
     <>
       <AddModal

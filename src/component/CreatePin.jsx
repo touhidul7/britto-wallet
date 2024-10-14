@@ -1,8 +1,10 @@
+/* eslint-disable no-unused-vars */
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
-import { createPin, logInSession } from '../redux/productSlice';
+import { createPin, logInSession, setDateRange } from '../redux/productSlice';
 import toast, { Toaster } from 'react-hot-toast';
+const formatDate = (date) => date.toISOString().split("T")[0];
 
 const CreatePin = () => {
     const [error, setError] = useState('');
@@ -34,6 +36,7 @@ const CreatePin = () => {
 
     //login pin
     const loginPin = (event) => {
+        handleDateRangeChange("Month");
         event.preventDefault();
         if (getInput == userInfoPin) {
             
@@ -46,6 +49,27 @@ const CreatePin = () => {
     };
 
 
+
+     /* ======================= Default DateRange Selector============================ */
+      
+     const [fromDate, setFromDate] = useState(
+        localStorage.getItem("fromDate") || ""
+      );
+      const [toDate, setToDate] = useState(localStorage.getItem("toDate") || "");
+    
+      const handleDateRangeChange = (srange) => {
+        const today = new Date();
+        let from, to;
+    
+        if (srange === "Month") {
+          from = formatDate(new Date(today.getFullYear(), today.getMonth(), 1));
+          to = formatDate(new Date(today.getFullYear(), today.getMonth() + 1, 0));
+        }
+    
+        setFromDate(from);
+        setToDate(to);
+        dispatch(setDateRange({ fromDate: from, toDate: to, range: srange }));
+      };
 
     return (
         <>
