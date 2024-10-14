@@ -20,8 +20,8 @@ export default function SelectedDate({ incomeList, expenseList }) {
 
 
   /* Total Income and Expense--------------- */
-  const totalIncome = incomeList.reduce((acc, income) => acc + income.amount, 0);
-  const totalExpense = expenseList.reduce((acc, expense) => acc + expense.amount, 0);
+  const totalIncome = incomeList.reduce((acc, income) => acc + Number(income.amount), 0);
+  const totalExpense = expenseList.reduce((acc, expense) => acc + Number(expense.amount), 0);
   
   return (
     <div className="flex flex-col gap-6">
