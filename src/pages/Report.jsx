@@ -46,8 +46,8 @@ const Report = () => {
     <div>
       <section className="bg-gray-2 pt-[90px] dark:bg-dark lg:pb-20 lg:pt-[120px] pb-10">
         <div className="container">
-          <div className="grid grid-cols-2 gap-3 dark:text-white mt-3 text-xl font-bold">
-            <h1>Banking Report</h1>
+          <div className="grid grid-cols-1 gap-3 dark:text-white mt-3 text-xl font-bold">
+            <h1>Report</h1>
           </div>
         </div>
       </section>

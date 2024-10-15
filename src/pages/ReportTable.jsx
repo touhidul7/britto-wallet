@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/no-children-prop */
 import { ChevronLeft, ChevronRight, FileSpreadsheet } from "lucide-react";
 import { useState } from "react";
@@ -143,8 +144,8 @@ const ReportTable = ({ tabledata, type }) => {
                 <ChevronRight />
               </button>
             </div>
-            <div className="dark:text-white flex justify-end p-2 gap-1 mt-1">
-              {/* Generate Report Sheet----------- */}
+            {/* Generate Report Sheet----------- */}
+            {/* <div className="dark:text-white flex justify-end p-2 gap-1 mt-1">
               <button
                 onClick={generateExcel}
                 className="flex gap-1 border-[1px] dark:border-gray-800 border-gray-200 p-1 rounded dark:bg-gray-800"
@@ -152,7 +153,7 @@ const ReportTable = ({ tabledata, type }) => {
                 <FileSpreadsheet />
                 Report
               </button>
-            </div>
+            </div> */}
           </>
         ) : (
           " "

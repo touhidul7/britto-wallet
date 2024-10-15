@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { logOutSession } from "../redux/productSlice";
+import { CircleUserRound } from "lucide-react";
 
 export default function AccountButton() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -70,17 +71,13 @@ export default function AccountButton() {
               className={`absolute right-0 top-full w-[240px] divide-y divide-stroke overflow-hidden rounded-lg bg-white dark:divide-dark-3 dark:bg-dark-2 ${dropdownOpen ? "block" : "hidden"}`}
             >
               <div className="flex items-center gap-3 px-4 py-3">
-                <div className="relative aspect-square w-10 rounded-full">
-                  <img
-                    src="https://cdn.tailgrids.com/2.2/assets/core-components/images/account-dropdowns/image-1.jpg"
-                    alt="account"
-                    className="w-full rounded-full object-cover object-center"
-                  />
+                <div className="relative aspect-square w-10 rounded-full flex items-center">
+                <CircleUserRound size={30}  className="dark:text-gray-200"/>
                   <span className="absolute -right-0.5 -top-0.5 block h-3.5 w-3.5 rounded-full border-2 border-white bg-green dark:border-dark"></span>
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-dark dark:text-white">
-                    Testing
+                    User
                   </p>
 
                 </div>

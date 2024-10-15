@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import {
   Moon,
@@ -41,7 +42,7 @@ const Settings = () => {
             onToggle={handleThemeToggle}
             isChecked={isDarkMode}
           />
-          <SettingButton
+          {/* <SettingButton
             content={"Change Password"}
             icon={<KeyRound />}
             onClick={handlecommingsoon}
@@ -65,7 +66,7 @@ const Settings = () => {
             icon={<Trash2 />}
             onClick={handlecommingsoon}
             color={"text-red-400"}
-          />
+          /> */}
         </div>
       </div>
     </section>
@@ -73,6 +74,10 @@ const Settings = () => {
 };
 
 export default Settings;
+
+
+
+
 
 /* Setting Button----------------------------------------------- */
 
