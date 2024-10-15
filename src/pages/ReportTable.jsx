@@ -114,7 +114,7 @@ const ReportTable = ({ tabledata, type }) => {
             <tr className=" text-center">
               <td
                 colSpan="3"
-                className="px-6 py-4 text-center font-bold text-lg"
+                className="px-6 py-4 text-center font-bold text-lg dark:text-gray-300 text-gray-800"
               >
                 No Transaction available
               </td>
