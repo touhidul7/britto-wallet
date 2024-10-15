@@ -130,7 +130,7 @@ const DataTable = ({ tabledata, type }) => {
               <button
                 onClick={handlePrevPage}
                 disabled={currentPage === 1}
-                className={`${currentPage === 1 ? "dark:text-gray-600" : ""}`}
+                className={`${currentPage === 1 ? "dark:text-gray-600 text-gray-400" : "text-gray-700 dark:text-gray-300"}`}
               >
                 <ChevronLeft />
               </button>
@@ -139,8 +139,7 @@ const DataTable = ({ tabledata, type }) => {
                 onClick={handleNextPage}
                 disabled={currentPage === totalPages}
                 className={`${
-                  currentPage === totalPages ? "dark:text-gray-600" : ""
-                }`}
+                  currentPage === totalPages ? "dark:text-gray-600 text-gray-400" : "text-gray-700 dark:text-gray-300"}`}
               >
                 <ChevronRight />
               </button>

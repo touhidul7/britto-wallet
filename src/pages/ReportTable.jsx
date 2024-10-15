@@ -129,7 +129,7 @@ const ReportTable = ({ tabledata, type }) => {
               <button
                 onClick={handlePrevPage}
                 disabled={currentPage === 1}
-                className={`${currentPage == 1 ? "dark:text-gray-600" : ""}`}
+                className={`${currentPage == 1 ? "dark:text-gray-600 text-gray-400" : "text-gray-700 dark:text-gray-300"}`}
               >
                 <ChevronLeft />
               </button>
@@ -138,8 +138,7 @@ const ReportTable = ({ tabledata, type }) => {
                 onClick={handleNextPage}
                 disabled={currentPage === totalPages}
                 className={`${
-                  currentPage == totalPages ? "dark:text-gray-600" : ""
-                }`}
+                  currentPage == totalPages ? "dark:text-gray-600 text-gray-400" : "text-gray-700 dark:text-gray-300"}`}
               >
                 <ChevronRight />
               </button>
@@ -148,7 +147,7 @@ const ReportTable = ({ tabledata, type }) => {
               {/* Generate Report Sheet----------- */}
               <button
                 onClick={generateExcel}
-                className="flex gap-1 border p-1 rounded dark:bg-gray-800"
+                className="flex gap-1 border-[1px] dark:border-gray-800 border-gray-200 p-1 rounded dark:bg-gray-800"
               >
                 <FileSpreadsheet />
                 Report
