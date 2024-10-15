@@ -29,7 +29,7 @@ const Settings = () => {
     );
   };
   return (
-    <section className="bg-gray-200 pt-[90px] dark:bg-gray-900 lg:pb-20 lg:pt-[120px] pb-5">
+    <section className=" pt-[90px] dark:bg-gray-900 lg:pb-20 lg:pt-[120px] pb-5">
       <div className="container">
         <div className="grid grid-cols-2 gap-3 dark:text-white mt-3 text-xl font-bold">
           <h1>Settings</h1>
@@ -75,10 +75,6 @@ const Settings = () => {
 
 export default Settings;
 
-
-
-
-
 /* Setting Button----------------------------------------------- */
 
 const SettingButton = ({ content, icon, onClick, color }) => {
@@ -107,13 +103,11 @@ const SettingButton = ({ content, icon, onClick, color }) => {
 };
 /* Setting Dropdown ----------------------------------------------- */
 
-const SettingDefaultRange = ({ icon, color,onClick }) => {
+const SettingDefaultRange = ({ icon, color, onClick }) => {
   const [selectedRange, setSelectedRange] = useState("Today");
   const [isOpen, setIsOpen] = useState(false);
 
-
   /* Dropdown Function */
-  // eslint-disable-next-line no-unused-vars
   const toggleDropdown = () => setIsOpen(!isOpen);
   const selectRange = (range) => {
     setSelectedRange(range);
@@ -124,7 +118,9 @@ const SettingDefaultRange = ({ icon, color,onClick }) => {
       <div className="relative inline-block text-left">
         {/* Dropdown Button */}
         <button
-          onClick={onClick}/* use this function to enable dropdown === toggleDropdown */
+          onClick={
+            onClick
+          } /* use this function to enable dropdown === toggleDropdown */
           className={` bg-white hover:bg-gray-100 border border-gray-200  focus:outline-none  font-medium rounded-lg text-sm px-5 py-5 text-center inline-flex items-center dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 me-2 mb-2 justify-between w-full cursor-pointer ${
             color ? `${color}` : "dark:text-white text-gray-900"
           }`}
